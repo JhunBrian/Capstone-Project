@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rice Disease Severity Estimation and Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  .information {
+  float: right;
+}
+
+  .container {
+    background-color: lightgreen;
+    border: 2px solid ghostwhite;
+    border-radius: 15px;
+  }
+
+</style>
+
+<body>
+
+<div class="container">
+  <h1 class="jumbotron bg-primary"><center>Rice Disease Severity Estimation and Classification</center></h1>
+  <br><br>
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+	{% if prediction %}
+  <center><h5>{{prediction}}</h5></center>
+  <center><h5>{{sev}}</h5></center>
+  <center><h5>{{ses_class}}</h5></center>
+  <center><img src="{{img_path}}" height="250px" width="250px"></center>
+
+	{% endif %}
+<br><br>
+<div class="information"> 
+  <h3>How to Manage Rice Diseases?</h3>
+  <br>
+  <ul style="list-style-type:none;">
+    <li><p><b>Rice Blast</b></p></li>
+    <ol>
+      <li>Adjust planting time. Sow seeds early, when possible, after the onset of the rainy season.</li>
+      <li>Split nitrogen fertilizer application in two or more treatments. Excessive use of fertilizer can increase blast intensity.</li>
+      <li>Flood the field as often as possible.</li>
+    </ol>
+    <br>
+    <li><p><b>Bacterial Blight</b></p></li>
+    <ol>
+      <li>Use balanced amounts of plant nutrients, especially nitrogen.</li>
+      <li>Ensure good drainage of fields (in conventionally flooded crops) and nurseries.</li>
+      <li>Keep fields clean. Remove weed hosts and plow under rice stubble, straw, rice ratoons and volunteer seedlings, which can serve as hosts of bacteria.</li>
+      <li>Allow fallow fields to dry in order to suppress disease agents in the soil and plant residues.</li>
+    </ol>
+    <br>
+    <li><p><b>Brown Spot</b></p></li>
+    <ol>
+      <li>monitor soil nutrients regularly</li>
+      <li>apply required fertilizers</li>
+      <li>for soils that are low in silicon, apply calcium silicate slag before planting</li>
+    </ol>
+    <br>
+    <li><p><b>Rice Tungro</b></p></li>
+    <ol>
+      <li>Grow tungro or leafhopper resistant varieties.</li>
+      <li>Practice synchronous planting with surrounding farms.</li>
+      <li>Adjust planting times to when green leafhopper are not in season or abundant, if known.</li>
+      <li>Plow infected stubbles immediately after harvest to reduce inoculum sources and destroy the eggs and breeding sites of green leaf hopper.</li>
+    </ol>
+  </ul>
+</div>
+</div>
+
+</body>
+</html>
