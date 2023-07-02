@@ -1,15 +1,15 @@
 from datetime import datetime
-from geopy.geocoders import Nominatim
+# from geopy.geocoders import Nominatim
 import os
-import numpy as np
-import matplotlib.pyplot as plt
-import cv2
+import numpy as np # 1.23.5
+import matplotlib.pyplot as plt # 3.6.3
+import cv2 # 4.7.0.68
 import csv
 
-from tensorflow import keras
-import tensorflow as tf
-import tensorflow_hub as hub
-from keras.models import load_model
+from tensorflow import keras # 2.11.0
+import tensorflow as tf # 2.11.0
+import tensorflow_hub as hub # 0.12.0
+from keras.models import load_model # 2.11.0
 from warnings import filterwarnings as fws
 fws('ignore')
 
@@ -117,9 +117,9 @@ def sequential_process(image_array, name=None):
     overlay_images(step3, step5, name=name)
     
     log_dict = {'DateTime':current_time,
-                'label':label, 
+                'label':"Healthy" if ses_evaluation(severity) == 0 else label, 
                 'confidence':conf, 
-                'SES class':ses_evaluation(severity), 
+                'SES class':"Not Supported" if label == "Tungro Virus" else ses_evaluation(severity), 
                 'severity':severity}
     
     append_to_csv('logs.csv', log_dict)

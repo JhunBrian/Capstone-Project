@@ -10,16 +10,38 @@
 </head>
 
 <style>
+  body {
+  background-image: url('../static/00_wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
   .information {
   float: right;
 }
 
   .container {
-    background-color: lightgreen;
+    background-color: rgba(167,221,159, 0.7);
     border: 2px solid ghostwhite;
     border-radius: 15px;
   }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 15px;
+}
+
+td, th {
+/*  border: 1px solid rgb(167,221,159);*/
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(167,221,159);
+}
 </style>
 
 <body>
@@ -51,6 +73,59 @@
 
 	{% endif %}
 <br><br>
+  <div class="ses_class">
+    <table>
+      <tr>
+        <th>Leaf Blast</th>
+        <th>Brown Spot</th>
+        <th>Bacterial Blight</th>
+        <th>Proportion</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td><4%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>4%=10%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>11%-25%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>26%-50%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+        <td>51%-75%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>6</td>
+        <td>6</td>
+        <td>>75%</td>
+      </tr>
+    </table>
+  </div>
+
 <div class="information"> 
   <h3>How to Manage Rice Diseases?</h3>
   <br>

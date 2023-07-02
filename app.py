@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from keras.models import load_model
-from keras.preprocessing import image
+# from keras.models import load_model
+# from keras.preprocessing import image
 from sequential_process_v2 import sequential_process
 import webbrowser
 
@@ -35,6 +35,6 @@ def get_output():
 
 if __name__ =='__main__':
     # Open the browser with the app's URL
-    webbrowser.open('http://localhost:5000')
+    webbrowser.open('http://192.168.0.105:5000/')
     # Start the Flask app
-    app.run(debug = True)
+    app.run(host='192.168.0.105', debug = True)
